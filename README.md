@@ -1,2 +1,15 @@
-# mimic
+# mimic3
 research for MIMIC-III dataset
+---
+### guide to install
++ go to data folder and do `wget --user YOURUSERNAME --ask-password -A csv.gz -m -p -E -k -K -np -nd https://physionet.org/works/MIMICIIIClinicalDatabase/files/` with YOURUSERNAME is the email you register for mimic3 dataset
++ install postgresql `sudo apt-get install postgresql libpq-dev`
++ install pgadmin4: download `wget https://ftp.postgresql.org/pub/pgadmin3/pgadmin4/v1.3/pip/pgadmin4-1.3-py2.py3-none-any.whl` and do `pip install pgadmin*` in your conda environment
++ make your computer account a superuser for postgres: `sudo su - postgres` then `psql postgres` then `CREATE USER youraccount;`, `ALTER USER youraccount superuser;`, and `CREATE DATABASE mimic3 OWNER youraccount`
++ fork the repo `git clone --recursive https://github.com/AM2-Labs/mimic3.git`
++ go the the subfolder `cd mimic3/mimic-code/buildmimic/postgres/`
++ create tables `psql mimic3 -f postgres_create_tables.sql -U youraccount`
++ import data into tables `psql mimic3 -f postgres_load_data_gz.sql -U mimic -v mimic_data_dir='<path_to_data>'`
+
+### practice to query
++ go to https://mimic.physionet.org/tutorials/intro-to-mimic-iii/ and practice
