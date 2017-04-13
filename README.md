@@ -23,3 +23,6 @@ research for MIMIC-III dataset
 
 ### papers
 + https://scholar.google.co.kr/scholar?um=1&ie=UTF-8&lr&cites=4115250243685522
++ base line 1: https://cs224d.stanford.edu/reports/priyanka.pdf
++ base line 2: http://cs224d.stanford.edu/reports/lukelefebure.pdf
++ base line 3: http://cs229.stanford.edu/proj2016/report/TanigawaPfohl-ComputationalPredictionOfClinicalOutcomeOfSepsisFromCriticalCareDatabase-report.pdf
