@@ -9,7 +9,17 @@ research for MIMIC-III dataset
 + fork the repo `git clone --recursive https://github.com/AM2-Labs/mimic3.git`
 + go the the subfolder `cd mimic3/mimic-code/buildmimic/postgres/`
 + create tables `psql mimic3 -f postgres_create_tables.sql -U youraccount`
-+ import data into tables `psql mimic3 -f postgres_load_data_gz.sql -U mimic -v mimic_data_dir='<path_to_data>'`
++ import data into tables `psql mimic3 -f postgres_load_data_gz.sql -U youraccount -v mimic_data_dir='<path_to_data>'`
++ add indices to database `psql mimic3 -f postgres_add_indexes.sql -U your account`
++ run pgadmin4: go to your python source folder of pgadmin4 `cd PATH/lib/python3.5/site-packages/pgadmin4`, do `python pgAdmin4.py`, and go to the browser `http://127.0.0.1:5050`
 
 ### practice to query
 + go to https://mimic.physionet.org/tutorials/intro-to-mimic-iii/ and practice
+
+### understand tables
++ go to https://mimic.physionet.org/mimictables/admissions/
++ more at https://mimic.physionet.org/mimicdata/metavision/
++ an example: https://www.youtube.com/watch?v=S4Iyp_wONGc
+
+### papers
++ https://scholar.google.co.kr/scholar?um=1&ie=UTF-8&lr&cites=4115250243685522
