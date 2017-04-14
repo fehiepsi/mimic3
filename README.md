@@ -11,7 +11,9 @@ research for MIMIC-III dataset
 + create tables `psql mimic3 -f postgres_create_tables.sql -U youraccount`
 + import data into tables `psql mimic3 -f postgres_load_data_gz.sql -U youraccount -v mimic_data_dir='<path_to_data>'`
 + add indices to database `psql mimic3 -f postgres_add_indexes.sql -U your account`
++ add password to your account `psql mimic3` then `ALTER USER youraccount PASSWORD 'yourpassword'` then `ALTER USER youraccount nosuperuser;`
 + run pgadmin4: go to your python source folder of pgadmin4 `cd PATH/lib/python3.5/site-packages/pgadmin4`, do `python pgAdmin4.py`, and go to the browser `http://127.0.0.1:5050`
++ to add database to pgadmin4, right click in Servers -> Create -> Server -> fill name (any name) -> Connection -> host: localhost -> database: mimic3 -> username: youraccount -> pass: yourpassword -> Save
 
 ### practice to query
 + go to https://mimic.physionet.org/tutorials/intro-to-mimic-iii/ and practice
